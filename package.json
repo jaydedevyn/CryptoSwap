@@ -1,8 +1,8 @@
 {
-  "name": "eth-marketplace",
+  "name": "cryptoswap",
   "version": "0.1.0",
   "description": "An Ethereum Marketplace",
-  "author": "gregory@dappuniversity.com",
+  "author": "silvajayde@gmail.com",
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
@@ -26,11 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "prettier --list-different 'contracts/**/*.sol'",
-    "prettier": "prettier --write 'contracts/**/*.sol'",
-    "generate-types": "typechain --target=truffle-v5 './build/contracts/*.json'",
-    "postinstall": "truffle compile && npm run generate-types"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

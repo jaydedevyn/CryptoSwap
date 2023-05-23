@@ -1,6 +1,7 @@
 # CryptoSwap
 
 CryptoSwap is a decentralized application that allows users to swap cryptocurrencies in a simulated environment, similar to the popular Uniswap platform. The app is built using Web3 and React, and provides an easy-to-use interface for listing and swapping different cryptocurrencies.
+This project is a React-based decentralized application (DApp) that interacts with the Ethereum blockchain. It utilizes Truffle Ganache for local development and deployment of smart contracts. The frontend application, written in React, communicates with the smart contracts deployed on Ganache.
 
 ## Getting Started
 
@@ -16,6 +17,10 @@ Next, install the required packages using npm:
 npm install
 ```
 
+## Project Setup
+
+Make sure you have Truffle Ganache installed for local blockchain development. If not, install it following the instructions provided by the Ganache documentation.
+
 ## Running the Application
 
 To run the application, use the following command:
@@ -26,12 +31,64 @@ npm start
 
 The application should now be running at `http://localhost:3000`.
 
-## Using the Application
+## Smart Contracts
 
-When you first open the application, you will see a list of different cryptocurrencies that are available for swapping. To swap a cryptocurrency, simply select the cryptocurrency you want to swap from the dropdown menu on the left side of the screen, and the cryptocurrency you want to receive from the dropdown menu on the right side of the screen. The app will then show you the current exchange rate and the estimated transaction fee.
+The project includes two smart contracts:
 
-Once you are ready to make the swap, click the "Swap" button. The app will then prompt you to confirm the transaction. If you confirm the transaction, the app will execute the swap and update your cryptocurrency balances.
+### EthSwap
 
-## Conclusion
+The `EthSwap` contract is responsible for facilitating the transfer of Ethereum between accounts. It enables users to exchange Ether for custom tokens.
 
-CryptoSwap is a powerful tool for cryptocurrency enthusiasts looking to quickly and easily swap their coins. The app's intuitive interface and simulated environment provide a low-risk way to experiment with different cryptocurrency swaps and learn about the different coins that are available. With its Web3 and React-based architecture, CryptoSwap is a cutting-edge tool that is sure to be popular with cryptocurrency traders and enthusiasts alike.
+### Token
+
+The `Token` contract creates the DApp token that can be traded using the `EthSwap` contract.
+
+## Running the Application
+
+To run the application locally, follow these steps:
+
+1. Start Ganache and ensure it is running on the default port (7545).
+2. Compile and migrate the smart contracts to Ganache using Truffle. Run `truffle compile` followed by `truffle migrate` in the project root directory.
+3. Start the React frontend by running `npm start` in the project root directory.
+4. Open your browser and navigate to `http://localhost:3000` to access the application.
+
+## Interacting with the DApp
+
+Once the application is running, you can perform the following actions:
+
+- View your account's ETH and DApp token balances.
+- Swap ETH for DApp tokens using the EthSwap contract.
+- Swap DApp tokens for ETH using the EthSwap contract.
+
+Please note that these interactions are simulated on the local Ganache blockchain and do not involve real funds.
+
+## Testing
+
+To run the tests for the smart contracts, use the following command:
+
+```
+truffle test
+```
+
+Make sure you have Ganache running before executing the tests.
+
+## Deployment
+
+To deploy the smart contracts to a public Ethereum network, follow these steps:
+
+1. Update the `truffle-config.js` file with your network configurations.
+2. Run the migration command appropriate for your desired network, such as `truffle migrate --network ropsten` for the Ropsten test network.
+3. After a successful migration, the smart contracts will be deployed to the specified network.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Thanks for checking out this project! Feel free to reach out if you have any questions or need further assistance.
+
